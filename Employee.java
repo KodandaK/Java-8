@@ -1,10 +1,14 @@
-package com.java8.fsd;
+package com.kk.fsd;
 
-public class Employee {
+import java.util.Comparator;
+
+public class Employee{
 private int id;
 private String name;
 private String address;
-private double sal;
+private int sal;
+
+
 public int getId() {
 	return id;
 }
@@ -23,11 +27,27 @@ public String getAddress() {
 public void setAddress(String address) {
 	this.address = address;
 }
-public double getSal() {
+public int getSal() {
 	return sal;
 }
-public void setSal(double sal) {
+public void setSal(int sal) {
 	this.sal = sal;
 }
+
+static int compareBySal(Employee e1,Employee e2) {
+	
+	if(e1.sal>e2.sal) {
+		return e1.sal;
+	}
+	else 
+	return e2.sal;
+	
+}
+
+@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getId()+" "+getName()+" "+getAddress()+" "+getSal();
+	}
 
 }
